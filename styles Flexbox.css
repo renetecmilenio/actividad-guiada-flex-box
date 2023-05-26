@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@300&display=swap');
+
+/* Base Styles */
+/* 1. Restaura los estilos por defecto y establece el padding y el margen a 0. */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+/* selector "a" es para los enlaces del documento */
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* A los títulos h1 asigna el tamaño de 30px, altura del texto de 600, margen de 10px 0 y el alto de la línea a 1.2. */
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 1.2em;
+    color: white;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2em;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* list style se refiere a los bullets que tienen por defecto las listas desordenadas */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* hay varias secciones con la misma clase lo cual afectaria a todas, se usa el shorthand de margin: 0 (top y bottom) auto (ajusta automaticamente el margen a los lados para centrar el container )  */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* short-hand parecido al del margin: el primer valor es top y bottom y el segundo es lef y right */
+.navbar{
+    background-color: purple;
+    height: 70px;
+    padding: 0 30px;
+}
+
+/* selecciona el h1 que se encuentre dentro del selector .navbar */
+.navbar h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 1.2rem;
+    color: white;
+    font-style: italic;
+}
+
+
+
+  /* estableciendo 2 selectores de clase juntos afecta solo al elemento que tenga esas clases, no afectaria si solo tiene 1 de los 2  */
+
+  /* se puede usar las propiedades de flexbox solo hasta que se establezca diplay:flex en el contenedor padre de los elementos */
+  .container.flex {
+    display: flex;
+   /* Distribuir items uniformemente
+El primer item al inicio, el último al final */
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: nowrap; */
+    /* flex-direction: row; */
+    height: 100%;
+}
+
+/* solo afecta a la lista desordenada que esta dentro de la etiqueta nav */
+nav ul {
+    display: flex;
+    /* flex-wrap: nowrap; */
+    /* flex-direction: row; */
+    justify-content: space-between;
+}
+
+/* nav li{
+    margin: 0 10px;
+} */
+
+/* afecta solo a los enlaces que esten dentro de nav */
+nav li a{
+    color: white;
+    margin: 0 10px;
+    padding: 9px;
+}
+
+/* La Seudoclase :hover activa los estilos cuando el usuario se desplaza sobre un elemento con el cursor (puntero del mouse).  */
+nav li a:hover{
+    color: #9867C5;
+border-bottom: 3px solid #9876C5;
+}
+
+.showcase{
+    height: 300px;
+    background-color: purple;
+    margin: auto;
+}
+
+.showcase p{
+    margin-bottom: 30px;
+}
+
+/* la propiedad box-shadow es para dar un sombreado puede ser interno y externo, acepta 3 valores (extension, desvanecimiento y desplazamiento) y el color  */
+.showcase img{
+    box-shadow: 7px 7px 7px rgba(0,0,0,0.2);
+}
+.showcase-form {
+    padding-left: 7px;
+}
+
+/* Para usar el módulo de GRID se establece con la propiedad display: grid */
+.grid {
+    display: grid;
+    /* una manera básica de establecer las clumnas es poner explicitamente los valores de cada columna en la propiedad grid-tamplate-columns, que pueden ser porcentajes %, pixeles px o fraciones 1fr para establecer el ancho de las columans */
+    grid-template-columns: 60% 40%;
+}
+
+.grid-item-1,
+.grid-item-2{
+    position: relative;
+    margin-top: 50px;
+}
+
+/* Para estilizar los elementos input, selecciona el primer elemento input por su tipo (email) y asígnale padding de 10px 70px 10px 0, tamaño de fuente
+14px, sin borde, border radius de 6px y padding izquierdo de 6px. */
+input[type="email"]{
+padding: 10px 70px 10px 6px;
+font-size: 14px;
+border: none;
+border-radius: 6px;
+outline: none;
+}
+/* Selecciona el segundo utilizando la clase CSS btn y asigna un border radius de 6px,
+padding de 12px 20px color de fondo #9867C5, sin borde, margen izquierdo 10px, color de fuente blanco, tamaño de fuente 16px, cursor pointer y
+sombra de 0 10px 10px rgba(0,0,0,0.2). */
+.btn{
+border-radius: 6px;
+padding: 12px 20px;
+background-color: #9867C5;
+border: none;
+margin-left: 10px;
+color: white;
+font-size: 16px;
+cursor: pointer;
+box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+
+}
+
+/* la manera correcta de establecer fuentes externas es poner entre comillas la fuente principal seguido de comas para poner las "Fuentes seguras" por si la principal no esta disponible o falla */
+/* Las fuentes seguras se encuentran en todos los dispositivos */
+.little-info{
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.lower-container{
+    margin: 120px auto;
+    padding: 0;
+    max-width: 1400px;
+}
+
+/* Para poder modificar la sección de estadísticas, primero aplica los siguientes estilos: a lover-container un margen de 120px auto, padding de 0 y un
+ancho máximo de 1400px; a los títulos (title) ponles color de texto negro, tamaño de texto 20px, alineación a la izquierda, padding izquierdo y superior
+de 10px; y a todos los párrafos de la clase text asigna el color negro, tamaño de 19px, ancho del 100%, padding de 10px, margen de 0 20px y texto
+justificado. */
+.title{
+    color: #000;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px 0px 0px 10px;
+}
+.text{
+    color: #000;
+    font-size: 19px;
+    width: 100%;
+    padding: 10px;
+    text-align: justify;
+}
+
+/* Como se tiene la intención de que los 3 div de la sección de estadísticas estén alineados de forma horizontal, usa flex en la clase flex, además pon un
+poco de espacio alrededor en justify-content, agrega padding de 45px 50px a la clase stats y alinea el texto al centro, además aplica margen de 0 30px,
+alinea el texto al centro y pon un ancho de 800px a la clase stat. */
+
+/* se utiliza el valor space-around que distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor.  */
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+
+.stats{
+    padding: 45px 50px;
+    text-align: center;
+
+}
+
+.stat{
+    text-align: center;
+    margin: 0 30px;
+    width: 800px;
+}
+
+.fa {
+    color: purple;
+}
+
+.testimonials{
+    padding: 40px;
+    color: #000;
+}
+
+/* border radius es para dar redondez a las esquinas de las cajas de los elementos o etiquetas */
+/* los valores negativos en margin es para sacar el contenido (desbordarlo de su contenedor o caja) */
+.circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 90%;
+    border: solid 3px purple;
+    margin: auto;
+    margin-top: -35px;
+    margin-bottom: 19px;
+}
+
+.testimonials h3{
+ text-align: center;
+}
+
+.circle img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* la propiedad gap es el espacio que se genera entre los elementos al establecer grid */
+.grid-3{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 40px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:7px 7px 20px rgba(0,0,0,0.2);
+}
+
+footer{
+    background-color: purple;
+    padding: 20px 10px;
+}
+footer a{
+color: white;
+margin: 0 10px;
+}
+
+
+p.supporting-text {
+    color: white;
+}
+
+.copyright {
+    color: white;
+}
+/* inicialmente la lista que se encuentra en el footer se acomodaba en fomra horizontal, para cambiarle la dirección se establece flex direction column para que se apilen verticalmente cada elemento de la lista */
+nav.links ul {
+    flex-direction: column;
+}
+
+nav.links ul {
+    height: 100%;
+}
+
+nav.links ul li a:hover {
+    color: #9867C5;
+    border-bottom: solid 2px #9867C5;
+}
+/* Classes */
